@@ -1,20 +1,6 @@
 import React, { useState } from "react";
 
-function jobExperience() {
-  const [experience, setExperience] = useState({
-    role: "",
-    company: "",
-    date: "",
-    city: "",
-    phone: "",
-    accomplishments: "",
-  });
-
-  const handleExperienceChange = (e) => {
-    const { name, value } = e.target;
-    setExperience({ ...experience, [name]: value });
-  };
-
+function jobExperience({experience ,handleExperienceChange}) {
   return (
     <form>
       <input

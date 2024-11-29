@@ -1,17 +1,6 @@
 import React, { useState } from 'react';
 
-const GeneralInfo = () => {
-	const [info, setInfo] = useState({
-		userName: "",   
-		userEmail: "",
-		userPhone: "",
-	});
-
-	const handleInfoChange = (e) => {
-		const {name, value} = e.target;
-		setInfo({...info, [name]: value});
-	};
-
+const GeneralInfo = ({ info, handleInfoChange }) => {
 	return (
 		<form>
 			<input

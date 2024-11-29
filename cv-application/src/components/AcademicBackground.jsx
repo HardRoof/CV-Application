@@ -1,17 +1,6 @@
 import React, { useState } from "react";
 
-function AcademicBackground() {
-  const [background, setBackground] = useState({
-    title: "",
-    institution: "",
-    date: "",
-  });
-
-  const handleBackgroundChange = () => {
-    const [name, value] = e.target;
-    setBackground({ ...background, [name]: value });
-  };
-
+function AcademicBackground({background, handleBackgroundChange}) {
   return (
     <form>
       <input
