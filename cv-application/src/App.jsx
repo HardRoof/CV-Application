@@ -1,9 +1,7 @@
 import { useState } from "react";
- // Alternatively: import React from "react"; useState is an object of react React.useState(initialValue);
- import GeneralInfo from "./components/GeneralInfo";
- import AcademicBackground from "./components/AcademicBackground";
- import JobExperience from "./components/JobExperience";
-
+// Alternatively: import React from "react"; useState is an object of react React.useState(initialValue);
+import FormSide from "./components/FormSide"
+import PreviewSide from "./components/PreviewSide";
 import "./index.css";
 
 function App() {
@@ -48,7 +46,7 @@ function App() {
       <header>CV App</header>
       <main>
         <FormSide />
-        <PreviewSide />
+        <PreviewSide info={info} background={background} experience={experience} />
       </main>
       <footer>CV App "Github logo"</footer>
     </>
