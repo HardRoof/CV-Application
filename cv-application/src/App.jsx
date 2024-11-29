@@ -1,14 +1,20 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+ // Alternatively: import React from "react"; useState is an object of react React.useState(initialValue);
+import FormSide from "./components/FormSide";
+import PreviewSide from "./components/PreviewSide";
+
+import "./index.css";
 
 function App() {
-//  const [count, setCount] = useState(0)
-
+  const text = "testing";
   return (
     <>
-    <div>
-    // code
-    </div>
+      <header>CV App</header>
+      <main>
+        <FormSide />
+        <PreviewSide />
+      </main>
+      <footer>CV App "Github logo"</footer>
     </>
   );
 }
