@@ -8,9 +8,9 @@ function AcademicBackground() {
   });
 
   const handleBackgroundChange = () => {
-    const [name, value] = e.target
-
-  }
+    const [name, value] = e.target;
+    setBackground({ ...background, [name]: value });
+  };
 
   return (
     <form>
