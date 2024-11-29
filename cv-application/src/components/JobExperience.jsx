@@ -12,7 +12,7 @@ function jobExperience() {
 
   const handleExperienceChange = (e) => {
     const { name, value } = e.target;
-    setExperience({...experience, [name]: value});
+    setExperience({ ...experience, [name]: value });
   };
 
   return (
