@@ -1,8 +1,6 @@
-import { useState } from "react";
 import GeneralInfo from "./components/GeneralInfo";
 import AcademicBackground from "./components/AcademicBackground";
 import JobExperience from "./components/JobExperience";
-
 
 export default function FormSide({
   info,
@@ -14,6 +12,15 @@ export default function FormSide({
 }) {
   return (
     <div>
-    
-    </div>)
+      <GeneralInfo info={info} handleInfoChange={handleInfoChange} />
+      <AcademicBackground
+        background={background}
+        handleBackgroundChange={handleBackgroundChange}
+      />
+      <JobExperience
+        experience={experience}
+        handleExperienceChange={handleExperienceChange}
+      />
+    </div>
+  );
 }
