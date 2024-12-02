@@ -1,6 +1,6 @@
-import GeneralInfo from "./components/GeneralInfo";
-import AcademicBackground from "./components/AcademicBackground";
-import JobExperience from "./components/JobExperience";
+import GeneralInfo from "./GeneralInfo";
+import AcademicBackground from "./AcademicBackground";
+import JobExperience from "./JobExperience";
 
 export default function FormSide({
   info,
@@ -12,7 +12,10 @@ export default function FormSide({
 }) {
   return (
     <div>
-      <GeneralInfo info={info} handleInfoChange={handleInfoChange} />
+      <GeneralInfo 
+        info={info} 
+        handleInfoChange={handleInfoChange}
+      />
       <AcademicBackground
         background={background}
         handleBackgroundChange={handleBackgroundChange}

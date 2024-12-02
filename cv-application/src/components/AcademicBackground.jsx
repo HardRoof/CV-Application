@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 function AcademicBackground({background, handleBackgroundChange}) {
   return (
     <form>

@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-
-function PreviewSide(info, background, experience) {
+function PreviewSide({ info, background, experience }) {
   const hasEducation =
     background?.title || background?.institution || background?.date;
   const hasExperience =
@@ -11,11 +9,12 @@ function PreviewSide(info, background, experience) {
     experience?.phone ||
     experience?.accomplishments;
   return (
-    <>
+    <div>
       <section>
-        <h1 style={{ fontWeight: "bold" }}>{info.userName}</h1>
+        <h1>{info.userName}</h1>
         <div>
           <h3>{info.userEmail}</h3>
+          <h3>{info.userPhone}</h3>
         </div>
       </section>
       <section>
@@ -41,7 +40,7 @@ function PreviewSide(info, background, experience) {
           </>
         )}
       </section>
-    </>
+    </div>
   );
 }
 
