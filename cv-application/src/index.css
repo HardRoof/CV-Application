@@ -86,11 +86,16 @@ footer img:hover {
 
 /* Main content */
 main {
-  display: flex;
-  padding: 20px;
+  display: grid;
+  grid-template-columns: clamp(25rem, 40%, 32rem) 4fr;
+  padding: 2rem;
 }
 
-main > div:nth-child(2) {
+main > nav {
+  padding-right: 2rem;
+}
+
+main > div {
   padding: 20px;
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
