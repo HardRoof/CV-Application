@@ -11,11 +11,8 @@ export default function FormSide({
   handleExperienceChange,
 }) {
   return (
-    <div>
-      <GeneralInfo 
-        info={info} 
-        handleInfoChange={handleInfoChange}
-      />
+    <nav>
+      <GeneralInfo info={info} handleInfoChange={handleInfoChange} />
       <AcademicBackground
         background={background}
         handleBackgroundChange={handleBackgroundChange}
@@ -24,6 +21,6 @@ export default function FormSide({
         experience={experience}
         handleExperienceChange={handleExperienceChange}
       />
-    </div>
+    </nav>
   );
 }
