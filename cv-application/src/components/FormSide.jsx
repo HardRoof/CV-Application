@@ -12,15 +12,31 @@ export default function FormSide({
 }) {
   return (
     <nav>
-      <GeneralInfo info={info} handleInfoChange={handleInfoChange} />
-      <AcademicBackground
-        background={background}
-        handleBackgroundChange={handleBackgroundChange}
-      />
-      <JobExperience
-        experience={experience}
-        handleExperienceChange={handleExperienceChange}
-      />
+      <div>
+        <div className="nav_div_header">
+          <img
+            className="div_header_logo"
+            src="https://rmathr.github.io/cv-project/462edf5f6d5ba03edebc.png"
+            alt="Form Header"
+            style={{ width: "2.4rem" }}
+          />
+          <p>Education Experience</p>
+        </div>
+
+        <GeneralInfo info={info} handleInfoChange={handleInfoChange} />
+      </div>
+      <div>
+        <AcademicBackground
+          background={background}
+          handleBackgroundChange={handleBackgroundChange}
+        />
+      </div>
+      <div>
+        <JobExperience
+          experience={experience}
+          handleExperienceChange={handleExperienceChange}
+        />
+      </div>
     </nav>
   );
 }
