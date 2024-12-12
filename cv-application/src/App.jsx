@@ -14,15 +14,16 @@ function App() {
   const [background, setBackground] = useState({
     title: "",
     institution: "",
-    date: "",
+    date1: "",
+    date2: "",
   });
 
   const [experience, setExperience] = useState({
     role: "",
     company: "",
-    date: "",
+    date1: "",
+    date2: "",
     city: "",
-    phone: "",
     accomplishments: "",
   });
 
