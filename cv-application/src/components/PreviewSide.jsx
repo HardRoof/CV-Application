@@ -1,13 +1,15 @@
 function PreviewSide({ info, background, experience }) {
   const hasEducation =
-    background?.title || background?.institution || background?.date;
+    background?.title ||
+    background?.institution ||
+    (background?.date1 && background?.date2);
   const hasExperience =
     experience?.role ||
     experience?.company ||
-    experience?.date ||
     experience?.city ||
-    experience?.phone ||
-    experience?.accomplishments;
+    experience?.accomplishments ||
+    (experience?.date1 && experience?.date2);
+
   return (
     <div>
       <section>
@@ -22,7 +24,11 @@ function PreviewSide({ info, background, experience }) {
           <>
             <h2>EDUCATION</h2>
             <p>{background.title}</p>
-            <p>{background.date}</p>
+            {background.date1 && background.date2 && (
+              <p>
+                {background.date1} – {background.date2}
+              </p>
+            )}
             <p>{background.institution}</p>
           </>
         )}
@@ -33,9 +39,12 @@ function PreviewSide({ info, background, experience }) {
             <h2>WORK EXPERIENCE</h2>
             <p>{experience.role}</p>
             <p>{experience.company}</p>
-            <p>{experience.date}</p>
+            {experience.date1 && experience.date2 && (
+              <p>
+                {experience.date1} – {experience.date2}
+              </p>
+            )}
             <p>{experience.city}</p>
-            <p>{experience.phone}</p>
             <p>{experience.accomplishments}</p>
           </>
         )}
