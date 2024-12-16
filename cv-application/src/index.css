@@ -3,6 +3,7 @@
 /* Base styles */
 :root {
   font-size: 62.5%; /* To turn 1rem into 10px */
+  --gray-background: #eef0f5;
 }
 
 * {
@@ -19,6 +20,10 @@ body {
   margin: 0;
   background-color: #f9f9f9;
   color: #333;
+}
+
+p {
+  margin: 0;
 }
 
 /* Header */
@@ -59,7 +64,7 @@ header h1 {
 /* Footer */
 footer {
   background-color: #ffffff;
-  color: #000000;
+  color: black;
   padding: 0.8rem 0;
   text-align: center;
   border-top: 1px solid #e0e0e0;
@@ -87,7 +92,7 @@ footer img:hover {
 /* Main content */
 main {
   display: grid;
-  grid-template-columns: clamp(25rem, 40%, 32rem) 4fr;
+  grid-template-columns: clamp(28rem, 40%, 50rem) 4fr;
   padding: 2rem;
 }
 
@@ -102,13 +107,14 @@ main > div {
 }
 
 nav > div {
-  margin-bottom: 24px;
-  background-color: var(--white-background);
-  padding: 24px 18px;
-  border-radius: 16px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 1.2rem;
+  padding: 18px;
+  margin-bottom: 24px;
+  background-color: var(--white-background);
+  border-radius: 16px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
@@ -116,5 +122,44 @@ nav > div {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1rem;
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 12px;
+}
+
+input,
+textarea {
+  height: 3.2rem;
+  padding: 0 12px;
+  background-color: var(--gray-background);
+  border: none;
+  border-radius: 12px;
+  outline: none;
+}
+
+input:not(:last-of-type) {
+  margin-bottom: 1.2rem;
+}
+
+textarea {
+  resize: none;
+  height: 8rem;
+  padding-top: 6px;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+}
+
+label[for="accomplishments"] {
+  margin-top: 1.2rem;
 }
