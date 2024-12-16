@@ -9,6 +9,7 @@ export default function FormSide({
   handleInfoChange,
   handleBackgroundChange,
   handleExperienceChange,
+  addNewBackground,
 }) {
   return (
     <nav>
@@ -39,8 +40,10 @@ export default function FormSide({
           background={background}
           handleBackgroundChange={handleBackgroundChange}
         />
+
+        <button onClick={addNewBackground}>+ Education</button>
       </div>
-      
+
       <div>
         <div className="nav_div_header">
           <img
@@ -55,6 +58,7 @@ export default function FormSide({
           experience={experience}
           handleExperienceChange={handleExperienceChange}
         />
+        <button onClick={addNewBackground}>+ Experience</button>
       </div>
     </nav>
   );
