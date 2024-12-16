@@ -37,8 +37,7 @@ function jobExperience({ experience, handleExperienceChange }) {
         onChange={handleExperienceChange}
       />
       <label htmlFor="accomplishments">Description</label>
-      <input
-        type="text"
+      <textarea
         name="accomplishments"
         value={experience.accomplishments}
         onChange={handleExperienceChange}
