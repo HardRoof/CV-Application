@@ -11,35 +11,63 @@ function App() {
     userPhone: "",
   });
 
-  const [background, setBackground] = useState({
-    title: "",
-    institution: "",
-    date1: "",
-    date2: "",
-  });
+  const [background, setBackground] = useState([
+    {
+      title: "",
+      institution: "",
+      date1: "",
+      date2: "",
+      id: crypto.randomUUID(),
+    },
+  ]);
 
-  const [experience, setExperience] = useState({
-    role: "",
-    company: "",
-    date1: "",
-    date2: "",
-    city: "",
-    accomplishments: "",
-  });
+  const [experience, setExperience] = useState([
+    {
+      role: "",
+      company: "",
+      date1: "",
+      date2: "",
+      city: "",
+      accomplishments: "",
+      id: crypto.randomUUID(),
+    },
+  ]);
 
   const handleInfoChange = (e) => {
     const { name, value } = e.target;
     setInfo({ ...info, [name]: value });
   };
 
-  const handleBackgroundChange = (e) => {
+  // const handleBackgroundChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setBackground({ ...background, [name]: value });
+  // };
+
+  const handleBackgroundChange = (e, id) => {
     const { name, value } = e.target;
-    setBackground({ ...background, [name]: value });
+    const newBackground = background.map((background) =>
+      background.id === id ? { ...background, [name]: value } : background
+    );
+    setBackground(newBackground);
   };
 
   const handleExperienceChange = (e) => {
     const { name, value } = e.target;
     setExperience({ ...experience, [name]: value });
+  };
+
+  const addNewBackground = () => {
+    setBackground([
+      ...background,
+      {
+        title: "",
+        institution: "",
+        date1: "",
+        date2: "",
+        id: crypto.randomUUID(),
+      },
+    ]);
+    console.log(background);
   };
 
   return (
@@ -62,6 +90,7 @@ function App() {
           handleInfoChange={handleInfoChange}
           handleBackgroundChange={handleBackgroundChange}
           handleExperienceChange={handleExperienceChange}
+          addNewBackground={addNewBackground}
         />
         <PreviewSide
           info={info}
