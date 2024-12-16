@@ -1,36 +1,36 @@
-function AcademicBackground({ background, handleBackgroundChange }) {
+const AcademicBackground = ({ background, handleBackgroundChange }) => {
   return (
     <form>
-      <label htmlFor="title">Degree</label>
-      <input
-        type="text"
-        name="title"
-        value={background.title}
-        onChange={handleBackgroundChange}
-      />
-      <label htmlFor="title">Institution</label>
-      <input
-        type="text"
-        name="institution"
-        value={background.institution}
-        onChange={handleBackgroundChange}
-      />
-      <label htmlFor="date1">Start Year</label>
-      <input
-        type="number"
-        name="date1"
-        value={background.date1}
-        onChange={handleBackgroundChange}
-      />
-      <label htmlFor="date2">End Year</label>
-      <input
-        type="number"
-        name="date2"
-        value={background.date2}
-        onChange={handleBackgroundChange}
-      />
+      {background.map((bg) => (
+        <div key={bg.id}>
+          <input
+            name="title"
+            value={bg.title}
+            onChange={(e) => handleBackgroundChange(e, bg.id)}
+            placeholder="Title"
+          />
+          <input
+            name="institution"
+            value={bg.institution}
+            onChange={(e) => handleBackgroundChange(e, bg.id)}
+            placeholder="Institution"
+          />
+          <input
+            name="date1"
+            value={bg.date1}
+            onChange={(e) => handleBackgroundChange(e, bg.id)}
+            placeholder="Start Date"
+          />
+          <input
+            name="date2"
+            value={bg.date2}
+            onChange={(e) => handleBackgroundChange(e, bg.id)}
+            placeholder="End Date"
+          />
+        </div>
+      ))}
     </form>
   );
-}
+};
 
 export default AcademicBackground;
