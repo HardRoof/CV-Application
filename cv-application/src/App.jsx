@@ -38,11 +38,6 @@ function App() {
     setInfo({ ...info, [name]: value });
   };
 
-  // const handleBackgroundChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setBackground({ ...background, [name]: value });
-  // };
-
   const handleBackgroundChange = (e, id) => {
     const { name, value } = e.target;
     const newBackground = background.map((background) =>
@@ -51,9 +46,12 @@ function App() {
     setBackground(newBackground);
   };
 
-  const handleExperienceChange = (e) => {
+  const handleExperienceChange = (e, id) => {
     const { name, value } = e.target;
-    setExperience({ ...experience, [name]: value });
+    const newExperience = experience.map((experience) =>
+      experience.id === id ? { ...experience, [name]: value } : experience
+    );
+    setExperience(newExperience);
   };
 
   const addNewBackground = () => {
@@ -67,7 +65,21 @@ function App() {
         id: crypto.randomUUID(),
       },
     ]);
-    console.log(background);
+  };
+
+  const addNewExperience = () => {
+    setExperience([
+      ...experience,
+      {
+        role: "",
+        company: "",
+        date1: "",
+        date2: "",
+        city: "",
+        accomplishments: "",
+        id: crypto.randomUUID(),
+      },
+    ]);
   };
 
   return (
@@ -91,6 +103,7 @@ function App() {
           handleBackgroundChange={handleBackgroundChange}
           handleExperienceChange={handleExperienceChange}
           addNewBackground={addNewBackground}
+          addNewExperience={addNewExperience}
         />
         <PreviewSide
           info={info}
