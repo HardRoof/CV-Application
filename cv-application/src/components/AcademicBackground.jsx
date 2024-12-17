@@ -1,8 +1,8 @@
-const AcademicBackground = ({ background, handleBackgroundChange }) => {
+const AcademicBackground = ({ background, handleBackgroundChange, closeFormBg }) => {
   return (
     <form>
       {background.map((bg) => (
-        <div key={bg.id}>
+        <React.Fragment key={bg.id}>
           <input
             name="title"
             value={bg.title}
@@ -27,7 +27,10 @@ const AcademicBackground = ({ background, handleBackgroundChange }) => {
             onChange={(e) => handleBackgroundChange(e, bg.id)}
             placeholder="End Date"
           />
-        </div>
+          <button className="close-button" onClick={closeFormBg}>
+            ×
+          </button>
+        </React.Fragment>
       ))}
     </form>
   );
