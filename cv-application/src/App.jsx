@@ -54,6 +54,16 @@ function App() {
     setExperience(newExperience);
   };
 
+  const handleCloseBtn = (e, id, type) => {
+    e.preventDefault();
+    if (type === "background") {
+      // If the condition item.id !== id is true, the item is included in the new array. If false, the item is excluded.
+      setBackground(background.filter((item) => item.id !== id));
+    } else if (type === "experience") {
+      setExperience(experience.filter((item) => item.id !== id));
+    }
+  };
+
   const addNewBackground = () => {
     setBackground([
       ...background,
@@ -88,9 +98,9 @@ function App() {
         <div className="header-content">
           <h1>CV App</h1>
           <div className="header-buttons">
-            <button>Font 1</button>
-            <button>Font 2</button>
-            <button>Font 3</button>
+            <button type="button">Font 1</button>
+            <button type="button">Font 2</button>
+            <button type="button">Font 3</button>
           </div>
         </div>
       </header>
@@ -104,6 +114,7 @@ function App() {
           handleExperienceChange={handleExperienceChange}
           addNewBackground={addNewBackground}
           addNewExperience={addNewExperience}
+          handleCloseBtn={handleCloseBtn}
         />
         <PreviewSide
           info={info}
