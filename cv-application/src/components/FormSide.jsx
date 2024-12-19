@@ -11,8 +11,7 @@ export default function FormSide({
   handleExperienceChange,
   addNewBackground,
   addNewExperience,
-  closeFormBg,
-  closeFormExp,
+  handleCloseBtn,
 }) {
   return (
     <nav>
@@ -42,10 +41,10 @@ export default function FormSide({
         <AcademicBackground
           background={background}
           handleBackgroundChange={handleBackgroundChange}
-          closeFormBg={closeFormBg}
+          handleCloseBtn={handleCloseBtn}
         />
 
-        <button onClick={addNewBackground}>+ Education</button>
+        <button type="button" onClick={addNewBackground}>+ Education</button>
       </div>
 
       <div>
@@ -61,9 +60,9 @@ export default function FormSide({
         <JobExperience
           experience={experience}
           handleExperienceChange={handleExperienceChange}
-          closeFormExp={closeFormExp}
+          handleCloseBtn={handleCloseBtn}
         />
-        <button onClick={addNewExperience}>+ Experience</button>
+        <button type="button" onClick={addNewExperience}>+ Experience</button>
       </div>
     </nav>
   );
