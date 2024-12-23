@@ -44,7 +44,9 @@ export default function FormSide({
           handleCloseBtn={handleCloseBtn}
         />
 
-        <button type="button" onClick={addNewBackground}>+ Education</button>
+        <button className="add_button" type="button" onClick={addNewBackground}>
+          + Education
+        </button>
       </div>
 
       <div>
@@ -62,7 +64,9 @@ export default function FormSide({
           handleExperienceChange={handleExperienceChange}
           handleCloseBtn={handleCloseBtn}
         />
-        <button type="button" onClick={addNewExperience}>+ Experience</button>
+        <button className="add_button" type="button" onClick={addNewExperience}>
+          + Experience
+        </button>
       </div>
     </nav>
   );
