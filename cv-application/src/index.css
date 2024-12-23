@@ -210,3 +210,64 @@ label[for="accomplishments"] {
 .close-button:active {
   transform: scale(0.9); /* Slightly scale down the button on click */
 }
+
+.add_button {
+  align-self: center;
+  margin-top: 18px;
+  background-color: #6c757d;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 12px;
+  transition-duration: 0.3s;
+}
+
+.add_button:hover {
+  background-color: white;
+  color: #222930;
+  outline: 1px solid #6c757d;
+}
+
+main > div {
+  display: flex;
+  flex-direction: column;
+  min-width: 75rem;
+  overflow-x: auto;
+}
+
+main > div > section:first-of-type {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+h1 {
+  align-self: center;
+  margin: 0;
+  font-size: 24px;
+}
+
+h2 {
+  position: relative;
+  margin: 4rem 0 5px 0;
+}
+
+h3 {
+  margin: 5px 0 0 0;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+main > div > section:first-of-type > div {
+  display: flex;
+  gap: 2rem;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  border-top: 2px solid black;
+  margin-bottom: 10px;
+}

@@ -1,35 +1,44 @@
 function PreviewSide({ info, background, experience }) {
-  const hasEducation =
-    background?.title ||
-    background?.institution ||
-    (background?.date1 && background?.date2);
-  const hasExperience =
-    experience?.role ||
-    experience?.company ||
-    experience?.city ||
-    experience?.accomplishments ||
-    (experience?.date1 && experience?.date2);
+  const hasEmail = info.userEmail;
+  const hasPhone = info.userPhone;
+  // .some checks if at least one item in the array meets a condition
+  const hasEducation = background.some(
+    (item) => item.title || item.institution || (item.date1 && item.date2)
+  );
+
+  const hasExperience = experience.some(
+    (item) =>
+      item.role ||
+      item.company ||
+      item.city ||
+      item.accomplishments ||
+      (item.date1 && item.date2)
+  );
 
   return (
     <div>
       <section>
         <h1>{info.userName}</h1>
         <div>
-          <h3>{info.userEmail}</h3>
-          <h3>{info.userPhone}</h3>
+          {hasEmail && <h3>Email: {info.userEmail}</h3>}
+          {hasPhone && <h3>Phone: {info.userPhone}</h3>}
         </div>
       </section>
       <section>
         {hasEducation && (
           <>
             <h2>EDUCATION</h2>
-            <p>{background.title}</p>
-            {background.date1 && background.date2 && (
-              <p>
-                {background.date1} – {background.date2}
-              </p>
-            )}
-            <p>{background.institution}</p>
+            {background.map((element) => (
+              <div key={element.id} className="education_divs">
+                <p>{element.title}</p>
+                {element.date1 && element.date2 && (
+                  <p>
+                    {element.date1} – {element.date2}
+                  </p>
+                )}
+                <p>{element.institution}</p>
+              </div>
+            ))}
           </>
         )}
       </section>
@@ -37,15 +46,19 @@ function PreviewSide({ info, background, experience }) {
         {hasExperience && (
           <>
             <h2>WORK EXPERIENCE</h2>
-            <p>{experience.role}</p>
-            <p>{experience.company}</p>
-            {experience.date1 && experience.date2 && (
-              <p>
-                {experience.date1} – {experience.date2}
-              </p>
-            )}
-            <p>{experience.city}</p>
-            <p>{experience.accomplishments}</p>
+            {experience.map((element) => (
+              <div key={element.id}>
+                <p>{element.role}</p>
+                <p>{element.company}</p>
+                {element.date1 && element.date2 && (
+                  <p>
+                    {element.date1} – {element.date2}
+                  </p>
+                )}
+                <p>{element.city}</p>
+                <p>{element.accomplishments}</p>
+              </div>
+            ))}
           </>
         )}
       </section>
