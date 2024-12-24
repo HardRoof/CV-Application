@@ -32,11 +32,11 @@ function PreviewSide({ info, background, experience }) {
               <div key={element.id} className="education_divs">
                 <p>{element.title}</p>
                 {element.date1 && element.date2 && (
-                  <p>
+                  <p className="dates">
                     {element.date1} – {element.date2}
                   </p>
                 )}
-                <p>{element.institution}</p>
+                <p className="institution">{element.institution}</p>
               </div>
             ))}
           </>
@@ -47,11 +47,11 @@ function PreviewSide({ info, background, experience }) {
           <>
             <h2>WORK EXPERIENCE</h2>
             {experience.map((element) => (
-              <div key={element.id}>
+              <div key={element.id} className="experience_divs">
                 <p>{element.role}</p>
                 <p>{element.company}</p>
                 {element.date1 && element.date2 && (
-                  <p>
+                  <p className="dates">
                     {element.date1} – {element.date2}
                   </p>
                 )}
