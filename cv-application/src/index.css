@@ -242,6 +242,14 @@ main > div > section:first-of-type {
   align-self: center;
 }
 
+section:not(:last-of-type) {
+  margin-bottom: 3rem;
+}
+
+section > div:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
 h1 {
   align-self: center;
   margin: 0;
@@ -250,7 +258,7 @@ h1 {
 
 h2 {
   position: relative;
-  margin: 4rem 0 5px 0;
+  margin: 0;
 }
 
 h3 {
@@ -270,4 +278,24 @@ h2::after {
   width: 100%;
   border-top: 2px solid black;
   margin-bottom: 10px;
+}
+
+.education_divs {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: auto auto;
+}
+
+.dates {
+  text-align: end;
+}
+
+.institution {
+  grid-row: 2 / 3 
+}
+
+.experience_divs {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: auto auto auto;
 }
