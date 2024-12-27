@@ -11,7 +11,7 @@ function PreviewSide({ info, background, experience }) {
       item.role ||
       item.company ||
       item.city ||
-      item.accomplishments ||
+      (item.accomplishments && item.accomplishments.length > 0) ||
       (item.date1 && item.date2)
   );
 
@@ -49,14 +49,21 @@ function PreviewSide({ info, background, experience }) {
             {experience.map((element) => (
               <div key={element.id} className="experience_divs">
                 <p>{element.role}</p>
-                <p>{element.company}</p>
+                <p className="company">
+                  {element.company}
+                  {element.city && `, ${element.city}`}
+                </p>
+
                 {element.date1 && element.date2 && (
                   <p className="dates">
                     {element.date1} – {element.date2}
                   </p>
                 )}
-                <p>{element.city}</p>
-                <p>{element.accomplishments}</p>
+                <ul className="accomplishments">
+                  {element.accomplishments.map((accomplishment) => (
+                    <li key={crypto.randomUUID()}>{accomplishment}</li>
+                  ))}
+                </ul>
               </div>
             ))}
           </>
