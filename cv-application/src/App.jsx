@@ -28,10 +28,12 @@ function App() {
       date1: "",
       date2: "",
       city: "",
-      accomplishments: "",
+      accomplishments: [],
       id: crypto.randomUUID(),
     },
   ]);
+
+  const [font, setFont] = useState("Arial, sans-serif");
 
   const handleInfoChange = (e) => {
     const { name, value } = e.target;
@@ -49,7 +51,15 @@ function App() {
   const handleExperienceChange = (e, id) => {
     const { name, value } = e.target;
     const newExperience = experience.map((experience) =>
-      experience.id === id ? { ...experience, [name]: value } : experience
+      experience.id === id
+        ? {
+            ...experience,
+            [name]:
+              name === "accomplishments"
+                ? value.split("\n").filter((line) => line.trim() !== "") // .filter is to ignore empty lines
+                : value,
+          }
+        : experience
     );
     setExperience(newExperience);
   };
@@ -86,7 +96,7 @@ function App() {
         date1: "",
         date2: "",
         city: "",
-        accomplishments: "",
+        accomplishments: [],
         id: crypto.randomUUID(),
       },
     ]);
