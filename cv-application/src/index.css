@@ -10,13 +10,12 @@
   box-sizing: border-box;
 }
 
-body {
+body,
+#root {
   font-family: montserrat, sans-serif, system-ui, -apple-system, "Segoe UI",
     "Open Sans", "Helvetica Neue";
   font-size: 1.6rem; /* To turn 1rem into 10px */
   min-height: 100vh;
-  display: grid;
-  grid-template-rows: max-content auto;
   margin: 0;
   background-color: #f9f9f9;
   color: #333;
@@ -72,6 +71,7 @@ footer {
   background-color: #ffffff;
   padding: 0.8rem 0;
   border-top: 1px solid #e0e0e0;
+  margin-top: auto; /* Pushes the footer to the bottom */
 }
 
 footer img {
@@ -101,12 +101,22 @@ main > nav {
   flex-direction: column;
   gap: 2rem;
   padding-right: 2rem;
+  height: 297mm;
+  overflow: auto; /* Enable scrolling */
+  border: 1px solid #ccc;
 }
 
 main > div {
-  padding: 20px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+  width: 210mm; /* A4 width */
+  height: 297mm; /* A4 height */
+  padding: 12mm;
+  justify-self: center;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
 }
 
 nav > div {
@@ -229,13 +239,6 @@ label[for="accomplishments"] {
   outline: 1px solid #6c757d;
 }
 
-main > div {
-  display: flex;
-  flex-direction: column;
-  min-width: 75rem;
-  overflow-x: auto;
-}
-
 main > div > section:first-of-type {
   display: flex;
   flex-direction: column;
@@ -284,18 +287,33 @@ h2::after {
   display: grid;
   grid-template-columns: 4fr 1fr;
   grid-template-rows: auto auto;
+  row-gap: 3px;
+}
+
+.education_divs p:first-child {
+  font-weight: 700;
 }
 
 .dates {
   text-align: end;
 }
 
-.institution {
-  grid-row: 2 / 3 
+.institution,
+.company {
+  grid-row: 2 / 3;
 }
 
 .experience_divs {
   display: grid;
   grid-template-columns: 4fr 1fr;
   grid-template-rows: auto auto auto;
+}
+
+.experience_divs p:first-child {
+  font-weight: 700;
+}
+
+.accomplishments {
+  margin: 5px 0 0 0;
+  grid-row: 3 / 4;
 }
