@@ -33,7 +33,13 @@ function App() {
     },
   ]);
 
-  const [font, setFont] = useState("Arial, sans-serif");
+  const previewFonts = ["Arial", "Times New Roman", "Bookman Old Style"];
+  const [fontIndex, setFontIndex] = useState(0);
+
+  const handleFontIndex = (e) => {
+    const { id } = e.target;
+    setFontIndex(id);
+  };
 
   const handleInfoChange = (e) => {
     const { name, value } = e.target;
@@ -108,9 +114,15 @@ function App() {
         <div className="header-content">
           <h1>CV App</h1>
           <div className="header-buttons">
-            <button type="button">Font 1</button>
-            <button type="button">Font 2</button>
-            <button type="button">Font 3</button>
+            <button id="0" type="button" onClick={(e) => handleFontIndex(e)}>
+              Font 1
+            </button>
+            <button id="1" type="button" onClick={(e) => handleFontIndex(e)}>
+              Font 2
+            </button>
+            <button id="2" type="button" onClick={(e) => handleFontIndex(e)}>
+              Font 3
+            </button>
           </div>
         </div>
       </header>
@@ -130,6 +142,8 @@ function App() {
           info={info}
           background={background}
           experience={experience}
+          previewFonts={previewFonts}
+          fontIndex={fontIndex}
         />
       </main>
       <footer>

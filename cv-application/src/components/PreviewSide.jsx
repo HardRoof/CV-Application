@@ -1,4 +1,10 @@
-function PreviewSide({ info, background, experience }) {
+function PreviewSide({
+  info,
+  background,
+  experience,
+  previewFonts,
+  fontIndex,
+}) {
   const hasEmail = info.userEmail;
   const hasPhone = info.userPhone;
   // .some checks if at least one item in the array meets a condition
@@ -16,7 +22,7 @@ function PreviewSide({ info, background, experience }) {
   );
 
   return (
-    <div>
+    <div style={{ fontFamily: previewFonts[fontIndex] }}>
       <section>
         <h1>{info.userName}</h1>
         <div>
