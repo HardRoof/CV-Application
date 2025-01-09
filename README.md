@@ -1,4 +1,4 @@
-# battleship
+# CV APP
 
 > - [Live Demo](https://mycvapplication.vercel.app/)
 
