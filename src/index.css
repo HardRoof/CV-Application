@@ -50,10 +50,18 @@ header {
   cursor: pointer;
   border-radius: 4px;
   margin-left: 1rem;
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for background and shadow */
 }
 
 .header-buttons button:hover {
   background-color: #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow on hover */
+}
+
+.header-buttons button:active {
+  background-color: #d0d0d0; /* Darker background on click */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Slightly smaller shadow on click */
+  transform: translateY(2px); /* Slightly move the button down on click */
 }
 
 header h1 {
